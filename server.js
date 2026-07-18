@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 dotenv.config();
+
+console.log("MONGO_URI =", process.env.MONGO_URI);
 mongoose.connect("process.env.https://authentication-system-s53h.onrender.com").then(() => console.log("MongoDB Connected")).catch(err => console.log(err));
 
 const app = express();

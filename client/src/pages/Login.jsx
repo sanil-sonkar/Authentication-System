@@ -10,7 +10,7 @@ function Login() {
 
   const handleLogin = async () => {
     const res = await fetch(
-      "http://localhost:5000/api/auth/login",
+      "https://authentication-system-s53h.onrender.com/api/auth/login",
       {
         method: "POST",
         headers: {

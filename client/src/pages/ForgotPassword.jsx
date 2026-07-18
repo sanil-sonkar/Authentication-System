@@ -8,7 +8,7 @@ function ForgotPassword() {
   const navigate = useNavigate();
   const handleForgotPassword = async () => {
     const res = await fetch(
-      "http://localhost:5000/api/auth/forgot-password",
+      "https://authentication-system-s53h.onrender.com/api/auth/forgot-password",
       {
         method: "POST",
         headers: {

@@ -18,7 +18,7 @@ function Dashboard() {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      "http://localhost:5000/api/auth/profile",
+      "https://authentication-system-s53h.onrender.com/api/auth/profile",
       {
         headers: {
           Authorization: `Bearer ${token}`,

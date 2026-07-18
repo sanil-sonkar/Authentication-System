@@ -8,7 +8,7 @@ function Signup() {
 
   const handleSignup = async () => {
     const res = await fetch(
-      "http://localhost:5000/api/auth/register",
+      "https://authentication-system-s53h.onrender.com/api/auth/register",
       {
         method: "POST",
         headers: {

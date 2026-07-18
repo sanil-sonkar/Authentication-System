@@ -8,7 +8,7 @@ function ResetPassword() {
   const navigate = useNavigate();
   const handleResetPassword = async () => {
     const res = await fetch(
-      "http://localhost:5000/api/auth/reset-password",
+      "https://authentication-system-s53h.onrender.com/api/auth/reset-password",
       {
         method: "POST",
         headers: {

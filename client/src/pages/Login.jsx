@@ -54,20 +54,28 @@ function Login() {
 
       <br /><br />
 
-      <input
-      type={showPassword ? "text" : "password"}
-      placeholder="Password"
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-    />
+      <div style={{ position: "relative", display: "inline-block" }}>
+  <input
+    type={showPassword ? "text" : "password"}
+    placeholder="Password"
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
+    style={{ paddingRight: "40px" }}
+  />
 
-      <br /><br />
-      <button
-  type="button"
-  onClick={() => setShowPassword(!showPassword)}
->
-  {showPassword ? "🙈" : "👁️"}
-</button>
+  <span
+    onClick={() => setShowPassword(!showPassword)}
+    style={{
+      position: "absolute",
+      right: "10px",
+      top: "50%",
+      transform: "translateY(-50%)",
+      cursor: "pointer",
+    }}
+  >
+    👁️
+  </span>
+</div>
 
       <br /><br />
       <button onClick={handleLogin} disabled={loading}>

@@ -11,6 +11,8 @@ function Dashboard() {
 
     if(!token) {
       navigate("/");
+    }else{
+      getProfile();
     }
   }, []);
 
@@ -39,31 +41,16 @@ function Dashboard() {
 
   return (
     <div className="container">
-      <h1>Welcome</h1>
-
-      <button onClick={getProfile}>
-        Get Profile
-      </button>
-
-      <br /><br />
+      <h1>
+        {user ? `Welcome ${user.name}` : "Dashboard"}
+      </h1>
 
       <button onClick={handleLogout}>
         Logout
       </button>
 
-      <br /><br />
 
-      <button
-      onClick={() => {
-        localStorage.removeItem("token");
-        navigate("/");
-      }}
-      >
-      Logout
-    </button>
-
-
-    <br /><be />
+    <br /><br />
 
       {user && (
         <div>

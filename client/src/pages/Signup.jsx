@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSignup = async () => {
     const res = await fetch(
@@ -23,7 +26,12 @@ function Signup() {
     );
 
     const data = await res.json();
-    alert(data.message);
+    if(res.ok) {
+      alert("Registration Successfully");
+      navigate("/");
+    }else{
+      alert(data.message);
+    }
   };
 
   return (

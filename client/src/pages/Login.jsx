@@ -5,10 +5,15 @@ import { Link } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showpassword, setpassword] = useState(false);
+  const [loading, setloding] = useState(false);
 
   const navigate = useNavigate();
 
   const handleLogin = async () => {
+
+    setLoading(true);
+
     const res = await fetch(
       "https://authentication-system-s53h.onrender.com/api/auth/login",
       {
@@ -32,6 +37,8 @@ function Login() {
   } else {
     alert(data.message);
   }
+
+  setLoading(false);
   };
 
   return (
@@ -48,11 +55,11 @@ function Login() {
       <br /><br />
 
       <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
+      type={showPassword ? "text" : "password"}
+      placeholder="Password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+    />
 
       <br /><br />
 
@@ -61,7 +68,16 @@ function Login() {
       </button>
 
       <br /><br />
+      <button onClick={() => setShowPassword(!showPassword)}>
+          {showPassword ? "Hide" : "Show"}
+      </button>
 
+      <br /><br />
+      <button onClick={handleLogin} disabled={loading}>
+      {loading ? "Loading..." : "Login"}
+      </button>
+
+      <br /><br />
       <Link to="/forgot-password"> Forgot Password </Link>
 
     <br /><br />

@@ -60,11 +60,14 @@ function Login() {
       value={password}
       onChange={(e) => setPassword(e.target.value)}
     />
-    
+
       <br /><br />
-      <button onClick={() => setShowPassword(!showPassword)}>
-          {showPassword ? "Hide" : "Show"}
-      </button>
+      <button
+  type="button"
+  onClick={() => setShowPassword(!showPassword)}
+>
+  {showPassword ? "🙈" : "👁️"}
+</button>
 
       <br /><br />
       <button onClick={handleLogin} disabled={loading}>

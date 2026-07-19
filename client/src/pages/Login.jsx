@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showpassword, setpassword] = useState(false);
-  const [loading, setloding] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoding] = useState(false);
 
   const navigate = useNavigate();
 
@@ -60,13 +60,7 @@ function Login() {
       value={password}
       onChange={(e) => setPassword(e.target.value)}
     />
-
-      <br /><br />
-
-      <button onClick={handleLogin}>
-        Login
-      </button>
-
+    
       <br /><br />
       <button onClick={() => setShowPassword(!showPassword)}>
           {showPassword ? "Hide" : "Show"}
